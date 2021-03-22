@@ -1,5 +1,5 @@
 # @theroyalwhee0/result
-A [Rust-like](https://doc.rust-lang.org/std/result/) Result type for TypeScript. Based on (Ville Hakulinen's post)[https://dev.to/duunitori/mimicing-rust-s-result-type-in-typescript-3pn1].
+A [Rust-like](https://doc.rust-lang.org/std/result/) Result type for TypeScript. Based on [Ville Hakulinen's post](https://dev.to/duunitori/mimicing-rust-s-result-type-in-typescript-3pn1).
 
 
 ## Installation
