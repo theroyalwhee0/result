@@ -1,7 +1,7 @@
 /**
  * @module @theroyalwhee0/result
  * @file A Rust-like Result type for TypeScript.
- * @version v0.0.1
+ * @version v0.0.2
  * @author Adam Mill <hismajesty@theroyalwhee.com>
  * @copyright Copyright 2021 Adam Mill
  * @license Apache-2.0
@@ -141,7 +141,7 @@ export function err<T, E, U>(error: E | Err<U, E>): Err<T, E> {
  * @param {Promise<T>} promise The promise to wrap.
  * @returns {AsyncResult<T,E>} The promise value or error as an AsyncResult.
  */
-export async function capture<T,E>(promise:Promise<T>):AsyncResult<T,E>{
+export async function capture<T,E=Error>(promise:Promise<T>):AsyncResult<T,E>{
   try {
     const results = await promise;
     return ok(results);
@@ -156,7 +156,7 @@ export async function capture<T,E>(promise:Promise<T>):AsyncResult<T,E>{
  * @param {...any} args Arguments to pass to the function.
  * @returns {Result<T,E>} The value or error as an Result.
  */
-export function captureFn<T,E,A  extends unknown[]>(fn:ArgsFunction<T,A>, ...args:A):Result<T,E>{
+export function captureFn<T,E=Error,A extends unknown[]=unknown[]>(fn:ArgsFunction<T,A>, ...args:A):Result<T,E>{
   try {
     const results = fn(...args);
     return ok(results);

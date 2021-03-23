@@ -24,6 +24,8 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## History
+- v0.0.2 - 2021-03-22
+  - Fix generic type defaults on capture & captureFn.
 - v0.0.1 - 2021-03-21
   - Initial release.
 

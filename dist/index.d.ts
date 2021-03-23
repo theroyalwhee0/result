@@ -98,11 +98,11 @@ export declare function err<T, E, U>(error: E | Err<U, E>): Err<T, E>;
  * @param {Promise<T>} promise The promise to wrap.
  * @returns {AsyncResult<T,E>} The promise value or error as an AsyncResult.
  */
-export declare function capture<T, E>(promise: Promise<T>): AsyncResult<T, E>;
+export declare function capture<T, E = Error>(promise: Promise<T>): AsyncResult<T, E>;
 /**
  * Capture the results of a function as a Result.
  * @param {Function} fn The function to wrap.
  * @param {...any} args Arguments to pass to the function.
  * @returns {Result<T,E>} The value or error as an Result.
  */
-export declare function captureFn<T, E, A extends unknown[]>(fn: ArgsFunction<T, A>, ...args: A): Result<T, E>;
+export declare function captureFn<T, E = Error, A extends unknown[] = unknown[]>(fn: ArgsFunction<T, A>, ...args: A): Result<T, E>;

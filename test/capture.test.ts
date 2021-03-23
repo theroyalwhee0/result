@@ -27,3 +27,14 @@ test('capture should wrap a rejected promise', async () => {
     expect(result.error).toBe(error);
   }
 });
+
+test('capture should default error type', async () => {
+  const promise = Promise.reject(new Error('Ham and Cheese'));
+  const result = await capture(promise);
+  expect(result.isErr()).toBe(true);
+  if(result.isErr()) {
+    // This failed to compile before the E was defaulted to Error.
+    const typecheck:Error = result.error;
+    expect(typecheck).toBeInstanceOf(Error);
+  }
+});

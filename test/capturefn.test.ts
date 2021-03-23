@@ -33,3 +33,14 @@ test('captureFn should wrap with arguments', async () => {
     expect(result.value).toBe(6);
   }
 });
+
+test('capture should default error type', async () => {
+  const fn = () => { throw new Error('Splat'); };
+  const result = captureFn(fn);
+  expect(result.isErr()).toBe(true);
+  if(result.isErr()) {
+    // This failed to compile before the E was defaulted to Error.
+    const typecheck:Error = result.error;
+    expect(typecheck).toBeInstanceOf(Error);
+  }
+});
