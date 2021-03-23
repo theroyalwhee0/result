@@ -133,7 +133,11 @@ export function ok<T, E>(value: T): Ok<T, E> {
  * @returns {Err<T,E>} An error result.
  */
 export function err<T, E, U>(error: E | Err<U, E>): Err<T, E> {
-  return new Err(error instanceof Err ? error.error : error);
+  const result =
+    error instanceof Err
+    ? error.error
+    : error;
+  return new Err(result);
 }
 
 /**

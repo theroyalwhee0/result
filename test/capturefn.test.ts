@@ -11,6 +11,8 @@ test('captureFn should wrap a function result', async () => {
   expect(result.isOk()).toBe(true);
   if(result.isOk()) {
     expect(result.value).toBe(84349);
+  } else {
+    fail('isOk should be true.');
   }
 });
 
@@ -21,6 +23,8 @@ test('captureFn should wrap a function exception', async () => {
   expect(result.isErr()).toBe(true);
   if(result.isErr()) {
     expect(result.error).toBe(error);
+  } else {
+    fail('isErr should be true.');
   }
 });
 
@@ -31,6 +35,8 @@ test('captureFn should wrap with arguments', async () => {
   expect(result.isOk()).toBe(true);
   if(result.isOk()) {
     expect(result.value).toBe(6);
+  } else {
+    fail('isOk should be true.');
   }
 });
 
@@ -42,5 +48,7 @@ test('capture should default error type', async () => {
     // This failed to compile before the E was defaulted to Error.
     const typecheck:Error = result.error;
     expect(typecheck).toBeInstanceOf(Error);
+  } else {
+    fail('isErr should be true.');
   }
 });

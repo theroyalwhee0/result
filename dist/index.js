@@ -2,7 +2,7 @@
 /**
  * @module @theroyalwhee0/result
  * @file A Rust-like Result type for TypeScript.
- * @version v0.0.1
+ * @version v0.0.2
  * @author Adam Mill <hismajesty@theroyalwhee.com>
  * @copyright Copyright 2021 Adam Mill
  * @license Apache-2.0
@@ -116,7 +116,10 @@ exports.ok = ok;
  * @returns {Err<T,E>} An error result.
  */
 function err(error) {
-    return new Err(error instanceof Err ? error.error : error);
+    const result = error instanceof Err
+        ? error.error
+        : error;
+    return new Err(result);
 }
 exports.err = err;
 /**

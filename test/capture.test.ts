@@ -13,6 +13,8 @@ test('capture should wrap a resolved promise', async () => {
   expect(result.isOk()).toBe(true);
   if(result.isOk()) {
     expect(result.value).toBe(1000);
+  } else {
+    fail('isOk should be true.');
   }
 });
 
@@ -25,6 +27,8 @@ test('capture should wrap a rejected promise', async () => {
   expect(result.isErr()).toBe(true);
   if(result.isErr()) {
     expect(result.error).toBe(error);
+  } else {
+    fail('isErr should be true.');
   }
 });
 
@@ -36,5 +40,7 @@ test('capture should default error type', async () => {
     // This failed to compile before the E was defaulted to Error.
     const typecheck:Error = result.error;
     expect(typecheck).toBeInstanceOf(Error);
+  } else {
+    fail('isErr should be true.');
   }
 });

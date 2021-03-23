@@ -1,4 +1,4 @@
-import { err } from '../src/index.js';
+import { err, Result } from '../src/index.js';
 
 test('err should be a function', () => {
   expect(err).toBeInstanceOf(Function);
@@ -22,7 +22,13 @@ test("err should generate an Err result with an Error", () => {
 test("err should generate an Err from an Err result", () => {
   const error = new Error('Boom!');
   const previousResult = err(error);
-  const result = err(previousResult);
+  expect(previousResult.isErr()).toBe(true);
+  let result:Result<unknown, Error>;
+  if(previousResult.isErr()) {
+    result = err(previousResult);
+  } else {
+    fail('isErr should be true.');
+  }
   expect(result).toBeInstanceOf(Object);
   expect(result.isErr()).toBe(true);
   expect(result.isOk()).toBe(false);
