@@ -19,8 +19,8 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## Links
-- GitHub: https://github.com/theroyalwhee0/result
-- NPM: https://www.npmjs.com/package/@theroyalwhee0/result
+- GitHub: [https://github.com/theroyalwhee0/result](https://github.com/theroyalwhee0/result)
+- NPM: [https://www.npmjs.com/package/@theroyalwhee0/result](https://www.npmjs.com/package/@theroyalwhee0/result)
 
 
 ## History
