@@ -3,11 +3,11 @@ A [Rust-like](https://doc.rust-lang.org/std/result/) Result type for TypeScript.
 
 
 ## Installation
-npm install @theroyalwhee0/result
+`npm install @theroyalwhee0/result`
 
 *or*
 
-yarn add @theroyalwhee0/result
+`yarn add @theroyalwhee0/result`
 
 
 ## Documentation
@@ -24,6 +24,8 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## History
+- v1.0.0 - 2022-06-02
+  - Bump depends for security.
 - v0.0.3 - 2021-06-11
   - Bump depends for security.
 - v0.0.2 - 2021-03-22
